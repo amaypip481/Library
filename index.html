@@ -10,56 +10,27 @@
 </head>
 
 <body>
+    <button id="addBooks">&#43;</button>
     <div id="container">
         <div id="header">
             <div>
                 <header>Your Library</header>
-                <button id="catalog">Books</button>
-                <button id="addBooks">Add Books</button>
+                <!-- <button id="catalog">Books</button> -->  
             </div>
             <div>
+                <button id="account">Your account</button>  
                 <img src="./Assets/logo.jpg" alt="Logo" id="headerLogo">
             </div>
         </div>
         <div id="content">
-            <!-- <div class="cardItems" id="sampleCardItem">
-                <img src="./Assets/logo.jpg" alt="Book">
-                <div class="cardItemDetails">
-                    <div class="Title imgSideContent">
-                        <header>Title: </header>
-                        <p>Kite</p>
-                    </div>
-                    <div class="Author imgSideContent">
-                        <header>Author: </header>
-                        <p>houdini</p>
-                    </div>
-                    <div class="Genre imgSideContent">
-                        <header>Genre: </header>
-                        <p>dfasdf</p>
-                    </div>
-                    <div class="Rating imgSideContent">
-                        <header>Rating: </header>
-                        <p>3/10</p>
-                    </div>
-                </div>
-                <div class="cardItemDescription">
-                    <header>Description</header>
-                    <p>fasdfasdfasdfasdfasdfasdfasdfasdfas</p>
-                </div>
-                <div class="cardItemButtons">
-                    <button class="read">&#10004; Read</button>
-                    <button class="readLater">&#9825; Save</button>
-                    <button class="delete">&#10005; Delete</button>
-                </div>
-            </div> -->
         </div>
         <div id="footer">
             <div>
-                <p>hello!!!</p>
+                <p>Happiness can be found, even in the darkest of times, if one only remembers to turn on the light - Albus Percival Wulfric Brian Dumbledore</p>
             </div>
         </div>
     </div>
-    <dialog>
+    <dialog id="addBookDialog">
         <form action="#" method="post" id="addBooksForm">
             <div>
                 <button id="formClose"><img src="./Assets/x-circle.svg" alt="Close"></button>
@@ -79,11 +50,6 @@
                 <input type="text" id="formGenre" required>
                 <p class="formErrorMessage">*Can't be blank</p>
             </div>
-            <div><label for="Rating">Rating</label></div>
-            <div>
-                <input type="number" id="formRating" min="0" max="10">
-                <p class="formErrorMessage">*Should be in the range of 1-10</p>
-            </div>
             <div><label for="Description">Description</label></div>
             <div>
                 <textarea id="formDescription"></textarea>
@@ -93,6 +59,7 @@
             </div>
         </form>
     </dialog>
+
 </body>
 
 </html>
