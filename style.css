@@ -28,6 +28,7 @@
     z-index: 2;
     padding: 0rem 1rem;
     grid-row: 1/2;
+    color: rgb(0, 0, 0);
 }
 
 #header>div{
@@ -66,13 +67,14 @@
 /* Add Button */
 #addBooks{
     position: fixed;
-    top: 75%;
-    left: 92%;
-    margin-right: 2rem;
-    width: 3rem;
+    top: 0.5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 1000;
+    width: 8rem;
     height: 3rem;
     border-radius: 50px;
-    font-size: 2.2rem;
+    font-size: 1.3rem;
     background-color: rgb(213, 239, 243);
     color: rgb(5, 5, 5);
     text-shadow: 0px 0px 4px rgba(106, 106, 106, 0.7);
@@ -245,6 +247,7 @@
 
     button{
         background-color: rgba(255, 255, 255, 0.1);
+        color: rgb(0, 0, 0) ;
         font-size: 0.7rem;
         padding: 0rem 0.3rem;
         border: 0.1rem solid rgba(255, 255, 255, 0.2);
