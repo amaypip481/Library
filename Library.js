@@ -92,24 +92,24 @@ function addBookToLibrary(e) {
     e.preventDefault();
     let addBookForm = document.querySelector("#addBooksForm");
     let Title = addBookForm.querySelector("#formTitle");
-    if(Title.value === "") {
+    if (Title.value === "") {
         Title.style.border = "0.1rem solid red";
         Title.nextElementSibling.style.display = "block";
         return;
     }
     let Author = addBookForm.querySelector("#formAuthor");
-    if(Author.value === "") {
+    if (Author.value === "") {
         Author.style.border = "0.1rem solid red";
         Author.nextElementSibling.style.display = "block";
         return;
     }
     let Genre = addBookForm.querySelector("#formGenre");
-    if(Genre.value === "") {
+    if (Genre.value === "") {
         Genre.style.border = "0.1rem solid red";
         Genre.nextElementSibling.style.display = "block";
         return;
     }
-      
+
     let Description = addBookForm.querySelector("#formDescription");
     let id = "cardItem" + myLibrary.length + 1;
     let newBook = Book(Title.value, Author.value, Genre.value, "", Description.value, id);
@@ -127,12 +127,12 @@ let formDetails = document.querySelector("#addBooksForm");
 let submitButton = formDetails.querySelector(".formButtonDiv").querySelector("button");
 
 submitButton.addEventListener("click", addBookToLibrary);
-document.querySelector("#formClose").addEventListener("click",closeForm);
+document.querySelector("#formClose").addEventListener("click", closeForm);
 
-function selectorChangeEvent(e){
+function selectorChangeEvent(e) {
     let parent = e.target.parentElement.parentElement.parentElement;
-    myLibrary.forEach((book)=>{
-        if(book.id === parent.id){
+    myLibrary.forEach((book) => {
+        if (book.id === parent.id) {
             book.Rating = e.target.value;
         }
     });
@@ -143,13 +143,11 @@ function isread(e) {
     let ratingSelectorValue = document.querySelector(".ratingselector");
     ratingSelectorValue.addEventListener("change", selectorChangeEvent);
     let parent = e.target.parentElement.parentElement;
-    if (e.target.style.backgroundColor === "rgb(4, 139, 42)")
-    {
+    if (e.target.style.backgroundColor === "rgb(4, 139, 42)") {
         e.target.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
         parent.querySelector(".Rating").style.display = "none";
     }
-    else
-    {
+    else {
         e.target.style.backgroundColor = "rgb(4, 139, 42)";
         parent.querySelector(".Rating").style.display = "flex";
     }
@@ -171,9 +169,13 @@ function deleteButton(e) {
     let parent = e.target.parentElement.parentElement;
     let container = parent.parentElement;
     container.removeChild(parent);
-    myLibrary.forEach((cardDetail)=>{
-        if(cardDetail.id === parent.id)
-            myLibrary.removeChild(cardDetail);
+    myLibrary.forEach((cardDetail) => {
+        if (cardDetail.id === parent.id) {
+            const index = myLibrary.indexOf(cardDetail);
+            if (index > -1) {
+                myLibrary.splice(index, 1); // Remove 1 item at the found index
+            }
+        }
     });
 }
 
@@ -189,12 +191,12 @@ function closeForm(e) {
 
 //  Reset the error message in the form
 
-function errorMessageReset(){
+function errorMessageReset() {
     let addBookForm = document.querySelector("#addBooksForm");
     let Title = addBookForm.querySelector("#formTitle");
     let Author = addBookForm.querySelector("#formAuthor");
     let Genre = addBookForm.querySelector("#formGenre");
-   
+
     Title.style.border = "";
     Title.nextElementSibling.style.display = "none";
     Author.style.border = "";
