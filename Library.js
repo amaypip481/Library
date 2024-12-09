@@ -93,7 +93,7 @@ function addBookToLibrary(e) {
         return;
     }
     let Rating = addBookForm.querySelector("#formRating");
-    if(Rating.value >10 || Rating.value <1) {
+    if(Rating.value !== '' && (Rating.value >10 || Rating.value <1)) {
         Rating.style.border = "0.1rem solid red";
         Rating.nextElementSibling.style.display = "block";
         return;
